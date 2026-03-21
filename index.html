@@ -169,7 +169,7 @@ nav.scrolled {
   width: 180px;
   margin: 0 auto 30px;
   opacity: 0.9;
-  filter: brightness(0) invert(1) sepia(0.3) saturate(0.5) hue-rotate(5deg);
+  
   animation: heroReveal 1.8s 0.3s ease-out both;
 }
 .hero-title {
@@ -1150,7 +1150,7 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
       <span data-inline-lang="es">Desde €120 / noche · 4 habitaciones disponibles</span>
     </p>
     <div class="booking-options">
-      <a href="mailto:info@tenethouse.it" class="book-btn book-btn-primary">
+      <a href="/cdn-cgi/l/email-protection#3e575058517e4a5b505b4a56514b4d5b10574a" class="book-btn book-btn-primary">
         ✉ 
         <span data-inline-lang="en">Book via Email</span>
         <span data-inline-lang="it">Prenota via Email</span>
@@ -1205,7 +1205,7 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
           </div>
           <div class="contact-item">
             <span class="contact-item-label">Email</span>
-            <a href="mailto:info@tenethouse.it" class="contact-item-value">info@tenethouse.it</a>
+            <a href="/cdn-cgi/l/email-protection#264f4840496652434843524e49535543084f52" class="contact-item-value"><span class="__cf_email__" data-cfemail="7c15121a133c08191219081413090f19521508">[email&#160;protected]</span></a>
           </div>
           <div class="contact-item">
             <span class="contact-item-label">WhatsApp / Phone</span>
@@ -1241,7 +1241,7 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
 </footer>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Language switcher
 function setLang(lang) {
   document.body.dataset.activeLang = lang;
@@ -1259,17 +1259,4 @@ window.addEventListener('scroll', () => {
 
 // Reveal on scroll
 const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.15 });
-reveals.forEach(el => observer.observe(el));
-
-// Init language
-setLang('en');
-</script>
-</body>
-</html>
+const observer = new I
