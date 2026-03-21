@@ -169,7 +169,6 @@ nav.scrolled {
   width: 180px;
   margin: 0 auto 30px;
   opacity: 0.9;
-  
   animation: heroReveal 1.8s 0.3s ease-out both;
 }
 .hero-title {
@@ -1150,7 +1149,7 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
       <span data-inline-lang="es">Desde €120 / noche · 4 habitaciones disponibles</span>
     </p>
     <div class="booking-options">
-      <a href="/cdn-cgi/l/email-protection#3e575058517e4a5b505b4a56514b4d5b10574a" class="book-btn book-btn-primary">
+      <a href="mailto:info@tenethouse.it" class="book-btn book-btn-primary">
         ✉ 
         <span data-inline-lang="en">Book via Email</span>
         <span data-inline-lang="it">Prenota via Email</span>
@@ -1205,7 +1204,7 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
           </div>
           <div class="contact-item">
             <span class="contact-item-label">Email</span>
-            <a href="/cdn-cgi/l/email-protection#264f4840496652434843524e49535543084f52" class="contact-item-value"><span class="__cf_email__" data-cfemail="7c15121a133c08191219081413090f19521508">[email&#160;protected]</span></a>
+            <a href="mailto:info@tenethouse.it" class="contact-item-value">info@tenethouse.it</a>
           </div>
           <div class="contact-item">
             <span class="contact-item-label">WhatsApp / Phone</span>
@@ -1240,23 +1239,29 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
   </div>
 </footer>
 
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Language switcher
+<script>
 function setLang(lang) {
-  document.body.dataset.activeLang = lang;
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    if (btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active');
+  document.body.setAttribute('data-active-lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.remove('active');
+    if (btn.textContent.trim().toLowerCase() === lang) {
+      btn.classList.add('active');
+    }
   });
 }
 
-// Nav scroll effect
-const nav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
+var navEl = document.getElementById('mainNav');
+window.addEventListener('scroll', function() {
+  navEl.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-const observer = new I
+var reveals = document.querySelectorAll('.reveal');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.15 });
+reveals.forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>
