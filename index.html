@@ -785,9 +785,9 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
   z-index: 2000;
   background: rgba(10,10,8,0.96);
   overflow-y: auto;
-  padding: 0;
+  align-items: flex-start;
+  justify-content: center;
 }
-.room-modal-overlay.active { display: flex; align-items: flex-start; justify-content: center; }
 .room-modal {
   width: 100%;
   max-width: 720px;
@@ -1134,7 +1134,6 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
         <div class="room-card-bg"></div>
         <div class="room-overlay">
           <span class="room-number">I</span>
-          <span class="room-size">~14 m²</span>
           <h3 class="room-name">Sator</h3>
           <p class="room-desc">
             <span data-inline-lang="en">A private, refined space designed for rest and balance. Two separate beds or one true king-size bed — no gap, just one continuous surface. High-quality mattresses and fresh, clean bed linen. Carefully prepared with strong attention to cleanliness and detail.</span>
@@ -1149,7 +1148,6 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
         <div class="room-card-bg"></div>
         <div class="room-overlay">
           <span class="room-number">II</span>
-          <span class="room-size">~14 m²</span>
           <h3 class="room-name">Arepo</h3>
           <p class="room-desc">
             <span data-inline-lang="en">A private, refined space designed for rest and balance. Two separate beds or one true king-size bed — no gap, just one continuous surface. High-quality mattresses and fresh, clean bed linen. Carefully prepared with strong attention to cleanliness and detail.</span>
@@ -1164,7 +1162,6 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
         <div class="room-card-bg"></div>
         <div class="room-overlay">
           <span class="room-number">III</span>
-          <span class="room-size">~14 m²</span>
           <h3 class="room-name">Rotas</h3>
           <p class="room-desc">
             <span data-inline-lang="en">A private, refined space designed for rest and balance. Two separate beds or one true king-size bed — no gap, just one continuous surface. High-quality mattresses and fresh, clean bed linen. Carefully prepared with strong attention to cleanliness and detail.</span>
@@ -1179,7 +1176,6 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
         <div class="room-card-bg"></div>
         <div class="room-overlay">
           <span class="room-number">IV</span>
-          <span class="room-size">~14 m²</span>
           <h3 class="room-name">Opera</h3>
           <p class="room-desc">
             <span data-inline-lang="en">A private, refined space designed for rest and balance. Two separate beds or one true king-size bed — no gap, just one continuous surface. High-quality mattresses and fresh, clean bed linen. Carefully prepared with strong attention to cleanliness and detail.</span>
@@ -1491,172 +1487,141 @@ body[data-active-lang="es"] [data-inline-lang="es"] { display: inline; }
     SATOR · AREPO<br>TENET · OPERA<br>ROTAS
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function setLang(lang) {
-  document.body.setAttribute('data-active-lang', lang);
-  document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.classList.remove('active');
-    if (btn.textContent.trim().toLowerCase() === lang) {
-      btn.classList.add('active');
-    }
-  });
-}
-
-var navEl = document.getElementById('mainNav');
-if (navEl) {
-  window.addEventListener('scroll', function() {
-    navEl.classList.toggle('scrolled', window.scrollY > 60);
-  });
-}
-
-var reveals = document.querySelectorAll('.reveal');
-if (reveals.length) {
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(function(el) { io.observe(el); });
-}
-
 <!-- ROOM MODAL -->
-<div class="room-modal-overlay" id="roomModal" onclick="handleModalClick(event)">
+<div class="room-modal-overlay" id="roomModal">
   <div class="room-modal" id="roomModalContent">
     <button class="modal-close" onclick="closeRoom()">✕</button>
     <div id="modalBody"></div>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* ─── LANGUAGE ─── */
-function setLang(lang) {
-  document.body.setAttribute('data-active-lang', lang);
-  document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.classList.remove('active');
-    if (btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active');
+<script>
+// LANGUAGE
+function setLang(code) {
+  document.body.setAttribute('data-active-lang', code);
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.classList.toggle('active', b.textContent.trim().toLowerCase() === code);
   });
 }
 
-/* ─── NAV SCROLL ─── */
-var navEl = document.getElementById('mainNav');
-if (navEl) {
-  window.addEventListener('scroll', function() {
-    navEl.classList.toggle('scrolled', window.scrollY > 60);
-  });
-}
+// NAV SCROLL
+window.addEventListener('scroll', function() {
+  var n = document.getElementById('mainNav');
+  if (n) n.classList.toggle('scrolled', window.scrollY > 60);
+});
 
-/* ─── REVEAL ─── */
-var reveals = document.querySelectorAll('.reveal');
-if (reveals.length) {
-  var io = new IntersectionObserver(function(entries) {
+// REVEAL ON SCROLL
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  var ob = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      if (e.isIntersecting) { e.target.classList.add('visible'); ob.unobserve(e.target); }
     });
   }, { threshold: 0.1 });
-  reveals.forEach(function(el) { io.observe(el); });
-}
+  els.forEach(function(el) { ob.observe(el); });
+})();
 
-/* ─── ROOM MODAL DATA ─── */
-var getLang = function() { return document.body.getAttribute('data-active-lang') || 'en'; };
-
-var roomsData = {
+// ROOM MODAL
+var ROOM_DATA = {
   sator: {
     element: { en:'Earth', it:'Terra', ru:'Земля', es:'Tierra' },
     name: 'Sator',
     photo: '',
     tagline: { en:'Grounded, stable, essential.', it:'Radicamento, stabilità, essenza.', ru:'Укоренённость, стабильность, суть.', es:'Arraigo, estabilidad, esencia.' },
-    intro: { en:'A space defined by atmosphere and intention. Sator — the one who sows, the one who creates order from the beginning. Everything here begins with presence. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Sator — colui che semina, colui che crea ordine dall\'inizio. Tutto qui inizia con la presenza. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Сатор — тот, кто сеет, кто создаёт порядок с самого начала. Всё здесь начинается с присутствия. Каждый элемент выбран для создания равновесия, покоя и ясности.', es:'Un espacio definido por atmósfera e intención. Sator — el que siembra, el que crea orden desde el principio. Todo aquí comienza con la presencia. Cada elemento está elegido para crear equilibrio, quietud y claridad.' },
-    bookingRef: 'Sator'
+    intro: { en:'A space defined by atmosphere and intention. Sator — the one who sows, the one who creates order from the beginning. Everything here begins with presence. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Sator — colui che semina, colui che crea ordine dall\'inizio. Tutto qui inizia con la presenza. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Сатор — тот, кто сеет, кто создаёт порядок с самого начала. Всё здесь начинается с присутствия. Каждый элемент выбран для создания равновесия, покоя и ясности.', es:'Un espacio definido por atmósfera e intención. Sator — el que siembra, el que crea orden desde el principio. Todo aquí comienza con la presencia. Cada elemento está elegido para crear equilibrio, quietud y claridad.' }
   },
   arepo: {
     element: { en:'Fire', it:'Fuoco', ru:'Огонь', es:'Fuego' },
     name: 'Arepo',
     photo: '',
     tagline: { en:'Depth, mystery, and hidden intensity.', it:'Profondità, mistero, intensità nascosta.', ru:'Глубина, тайна, скрытая интенсивность.', es:'Profundidad, misterio, intensidad oculta.' },
-    intro: { en:'A space defined by atmosphere and intention. Arepo — the craftsman, the one who guides with steady hands. Here, every detail is in its place. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Arepo — l\'artigiano, colui che guida con mani ferme. Qui ogni dettaglio è al suo posto. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Арепо — мастер, тот, кто ведёт твёрдой рукой. Здесь каждая деталь на своём месте. Каждый элемент выбран для создания равновесия, покоя и ясности.', es:'Un espacio definido por atmósfera e intención. Arepo — el artesano, el que guía con manos firmes. Aquí cada detalle está en su lugar. Cada elemento está elegido para crear equilibrio, quietud y claridad.' },
-    bookingRef: 'Arepo'
+    intro: { en:'A space defined by atmosphere and intention. Arepo — the craftsman, the one who guides with steady hands. Here, every detail is in its place. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Arepo — l\'artigiano, colui che guida con mani ferme. Qui ogni dettaglio è al suo posto. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Арепо — мастер, тот, кто ведёт твёрдой рукой. Здесь каждая деталь на своём месте. Каждый элемент выбран для создания равновесия, покоя и ясности.', es:'Un espacio definido por atmósfera e intención. Arepo — el artesano, el que guía con manos firmes. Aquí cada detalle está en su lugar. Cada elemento está elegido para crear equilibrio, quietud y claridad.' }
   },
   opera: {
     element: { en:'Air', it:'Aria', ru:'Воздух', es:'Aire' },
     name: 'Opera',
     photo: '',
     tagline: { en:'Light, creation, and expression.', it:'Luce, creazione, espressione.', ru:'Свет, творчество, выражение.', es:'Luz, creación y expresión.' },
-    intro: { en:'A space defined by atmosphere and intention. Opera — the work, the act, the expression. A room that holds creativity and quiet in equal measure. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Opera — il lavoro, l\'atto, l\'espressione. Una camera che tiene creatività e quiete in uguale misura. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Опера — работа, акт, выражение. Номер, в котором творчество и покой в равной мере. Каждый элемент выбран для создания равновесия, покоя и ясности.', es:'Un espacio definido por atmósfera e intención. Opera — la obra, el acto, la expresión. Una habitación que alberga creatividad y quietud a partes iguales. Cada elemento está elegido para crear equilibrio, quietud y claridad.' },
-    bookingRef: 'Opera'
+    intro: { en:'A space defined by atmosphere and intention. Opera — the work, the act, the expression. A room that holds creativity and quiet in equal measure. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Opera — il lavoro, l\'atto, l\'espressione. Una camera che tiene creatività e quiete in uguale misura. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Опера — работа, акт, выражение. Номер, в котором творчество и покой в равной мере. Каждый элемент выбран для создания равновесия, покоя и ясности.', es:'Un espacio definido por atmósfera e intención. Opera — la obra, el acto, la expresión. Una habitación que alberga creatividad y quietud a partes iguales. Cada elemento está elegido para crear equilibrio, quietud y claridad.' }
   },
   rotas: {
     element: { en:'Water', it:'Acqua', ru:'Вода', es:'Agua' },
     name: 'Rotas',
     photo: '',
     tagline: { en:'Movement, flow, and quiet transition.', it:'Movimento, flusso, transizione silenziosa.', ru:'Движение, поток, тихий переход.', es:'Movimiento, flujo y transición serena.' },
-    intro: { en:'A space defined by atmosphere and intention. Rotas — the wheel, the cycle, the return. A reminder that rest is not absence — it is renewal. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Rotas — la ruota, il ciclo, il ritorno. Un promemoria che il riposo non è assenza — è rinnovamento. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Ротас — колесо, цикл, возвращение. Напоминание о том, что отдых — не отсутствие, а обновление. Каждый элемент выбран для создания равновесия, покоя и ясности.', es:'Un espacio definido por atmósfera e intención. Rotas — la rueda, el ciclo, el regreso. Un recordatorio de que el descanso no es ausencia — es renovación. Cada elemento está elegido para crear equilibrio, quietud y claridad.' },
-    bookingRef: 'Rotas'
+    intro: { en:'A space defined by atmosphere and intention. Rotas — the wheel, the cycle, the return. A reminder that rest is not absence — it is renewal. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Rotas — la ruota, il ciclo, il ritorno. Un promemoria che il riposo non è assenza — è rinnovamento. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Ротас — колесо, цикл, возвращение. Напоминание о том, что отдых — не отсутствие, а обновление. Каждый элемент выбран для создания равновесия, покоя и ясности.', es:'Un espacio definido por atmósfera e intención. Rotas — la rueda, el ciclo, el regreso. Un recordatorio de que el descanso no es ausencia — es renovación. Cada elemento está elegido para crear equilibrio, quietud y claridad.' }
   }
 };
 
-var labels = {
-  sleeping: { en:'Sleeping Arrangement', it:'Configurazione Letto', ru:'Спальные места', es:'Configuración de cama' },
-  linen:    { en:'Bed Linen', it:'Biancheria', ru:'Постельное бельё', es:'Ropa de cama' },
-  clean:    { en:'Cleanliness', it:'Pulizia', ru:'Чистота', es:'Limpieza' },
-  details:  { en:'Micro Details', it:'Dettagli', ru:'Детали', es:'Detalles' },
-  book:     { en:'Reserve this room', it:'Prenota questa camera', ru:'Забронировать номер', es:'Reservar esta habitación' },
-  contact:  { en:'Or contact us directly', it:'O contattaci direttamente', ru:'Или свяжитесь напрямую', es:'O contáctenos directamente' },
-  size:     { en:'~14 m² · Private bathroom', it:'~14 m² · Bagno privato', ru:'~14 м² · Личная ванная', es:'~14 m² · Baño privado' },
-  sleepDesc:{ en:'Two separate beds or one true king-size bed — no gap, just one continuous surface. High-quality mattresses support true, restorative rest.', it:'Due letti separati o un vero king-size — nessuno spazio, solo una superficie continua. Materassi di alta qualità per un riposo vero e rigenerante.', ru:'Две раздельные кровати или одна настоящая king-size — без зазора, единая поверхность. Матрасы высокого качества для настоящего восстановительного отдыха.', es:'Dos camas separadas o una verdadera king-size — sin hueco, solo una superficie continua. Colchones de alta calidad para un descanso verdadero.' },
-  linenDesc:{ en:'Premium bed linen, carefully selected. Always fresh, always clean — with a natural, pure scent.', it:'Biancheria da letto premium, selezionata con cura. Sempre fresca, sempre pulita — con un profumo naturale e puro.', ru:'Премиальное постельное бельё, тщательно подобранное. Всегда свежее, всегда чистое — с натуральным, чистым ароматом.', es:'Ropa de cama premium, cuidadosamente seleccionada. Siempre fresca, siempre limpia — con un aroma natural y puro.' },
-  cleanDesc:{ en:'Special attention is dedicated to cleanliness. Each room is prepared with precision, care, and deep respect for every guest. Cleanliness is not just maintained — it is respected.', it:'Attenzione speciale è dedicata alla pulizia. Ogni camera è preparata con precisione, cura e profondo rispetto per ogni ospite. La pulizia non è solo mantenuta — è rispettata.', ru:'Особое внимание уделяется чистоте. Каждый номер подготовлен с точностью, заботой и глубоким уважением к каждому гостю. Чистота не просто поддерживается — она уважается.', es:'Se dedica especial atención a la limpieza. Cada habitación se prepara con precisión, cuidado y profundo respeto por cada huésped. La limpieza no solo se mantiene — se respeta.' },
-  microList:{ en:['Carefully prepared before every arrival','Fresh, clean, and naturally scented linens','Designed for real rest and comfort','Cleanliness with attention to every detail'], it:['Preparata con cura prima di ogni arrivo','Biancheria fresca, pulita e profumata naturalmente','Pensata per il vero riposo e comfort','Pulizia con attenzione ad ogni dettaglio'], ru:['Тщательно подготовлено перед каждым заездом','Свежее, чистое и натурально ароматное бельё','Создано для настоящего отдыха и комфорта','Чистота с вниманием к каждой детали'], es:['Preparada con cuidado antes de cada llegada','Ropa de cama fresca, limpia y con aroma natural','Diseñada para el descanso real y el confort','Limpieza con atención a cada detalle'] },
-  bookBtn:  { en:'Book Now', it:'Prenota Ora', ru:'Забронировать', es:'Reservar Ahora' }
+var TX = {
+  sleep: { en:'Sleeping Arrangement', it:'Configurazione Letto', ru:'Спальные места', es:'Cama' },
+  linen: { en:'Bed Linen', it:'Biancheria', ru:'Постельное бельё', es:'Ropa de cama' },
+  clean: { en:'Cleanliness', it:'Pulizia', ru:'Чистота', es:'Limpieza' },
+  det:   { en:'Micro Details', it:'Dettagli', ru:'Детали', es:'Detalles' },
+  from:  { en:'From', it:'Da', ru:'От', es:'Desde' },
+  night: { en:'/ night', it:'/ notte', ru:'/ ночь', es:'/ noche' },
+  book:  { en:'Book Now', it:'Prenota Ora', ru:'Забронировать', es:'Reservar Ahora' },
+  or:    { en:'Or write us:', it:'O scrivici:', ru:'Или напишите:', es:'O escríbenos:' },
+  sleepT:{ en:'Two separate beds or one true king-size bed — no gap, just one continuous surface. High-quality mattresses support true, restorative rest.', it:'Due letti separati o un vero king-size — nessuno spazio, solo una superficie continua. Materassi di alta qualità per un riposo vero.', ru:'Две раздельные кровати или одна king-size — без зазора, единая поверхность. Матрасы высокого качества.', es:'Dos camas separadas o una verdadera king-size — sin hueco, superficie continua. Colchones de alta calidad.' },
+  linenT:{ en:'Premium bed linen, carefully selected. Always fresh, always clean — with a natural, pure scent.', it:'Biancheria da letto premium. Sempre fresca, sempre pulita — con un profumo naturale e puro.', ru:'Премиальное постельное бельё. Всегда свежее, всегда чистое — с натуральным ароматом.', es:'Ropa de cama premium. Siempre fresca, siempre limpia — con aroma natural y puro.' },
+  cleanT:{ en:'Special attention is dedicated to cleanliness. Each room is prepared with precision, care, and deep respect for every guest. Cleanliness is not just maintained — it is respected.', it:'Attenzione speciale alla pulizia. Ogni camera è preparata con precisione e rispetto. La pulizia non è solo mantenuta — è rispettata.', ru:'Особое внимание чистоте. Каждый номер подготовлен с точностью и уважением. Чистота не просто поддерживается — она уважается.', es:'Especial atención a la limpieza. Cada habitación se prepara con precisión y respeto. La limpieza no solo se mantiene — se respeta.' },
+  micro: {
+    en: ['Carefully prepared before every arrival','Fresh, clean, and naturally scented linens','Designed for real rest and comfort','Cleanliness with attention to every detail'],
+    it: ['Preparata con cura prima di ogni arrivo','Biancheria fresca, pulita e profumata naturalmente','Pensata per il vero riposo e comfort','Pulizia con attenzione ad ogni dettaglio'],
+    ru: ['Тщательно подготовлено перед каждым заездом','Свежее, чистое и натурально ароматное бельё','Создано для настоящего отдыха','Чистота с вниманием к каждой детали'],
+    es: ['Preparada con cuidado antes de cada llegada','Ropa fresca, limpia y con aroma natural','Diseñada para el descanso real','Limpieza con atención a cada detalle']
+  }
 };
 
 function openRoom(key) {
-  var r = roomsData[key];
-  var l = getLang();
-  var body = document.getElementById('modalBody');
-  var microItems = labels.microList[l].map(function(i){ return '<li>'+i+'</li>'; }).join('');
-  var photoSrc = r.photo || '';
-  var photoHtml = photoSrc
-    ? '<div class="modal-photo"><img src="'+photoSrc+'" alt="'+r.name+'"></div>'
-    : '<div class="modal-photo"><span class="modal-photo-placeholder">'+r.name+' — photo coming soon</span></div>';
-  body.innerHTML =
-    photoHtml+
+  var r = ROOM_DATA[key];
+  if (!r) return;
+  var l = document.body.getAttribute('data-active-lang') || 'en';
+  var mi = TX.micro[l].map(function(i){ return '<li>'+i+'</li>'; }).join('');
+  var ph = r.photo
+    ? '<div class="modal-photo"><img src="'+r.photo+'" alt="'+r.name+'"></div>'
+    : '<div class="modal-photo"><span class="modal-photo-placeholder">'+r.name+' · photo coming soon</span></div>';
+
+  document.getElementById('modalBody').innerHTML =
+    ph+
     '<p class="modal-room-element">'+r.element[l]+'</p>'+
     '<h2 class="modal-room-name">'+r.name+'</h2>'+
     '<p class="modal-room-tagline">'+r.tagline[l]+'</p>'+
-    '<p class="modal-text" style="font-size:11px;letter-spacing:2px;color:rgba(184,155,106,0.5);margin-bottom:6px">'+labels.size[l]+'</p>'+
     '<div class="modal-price-block">'+
-      '<span class="modal-price-from">From</span>'+
+      '<span class="modal-price-from">'+TX.from[l]+'</span>'+
       '<span class="modal-price-num">€120</span>'+
-      '<span class="modal-price-night">/ night</span>'+
+      '<span class="modal-price-night">'+TX.night[l]+'</span>'+
     '</div>'+
-    '<div class="modal-divider" style="margin-top:24px"></div>'+
+    '<div class="modal-divider" style="margin-top:20px"></div>'+
     '<p class="modal-text">'+r.intro[l]+'</p>'+
-    '<p class="modal-section-title">'+labels.sleeping[l]+'</p>'+
-    '<p class="modal-text">'+labels.sleepDesc[l]+'</p>'+
-    '<p class="modal-section-title">'+labels.linen[l]+'</p>'+
-    '<p class="modal-text">'+labels.linenDesc[l]+'</p>'+
-    '<p class="modal-section-title">'+labels.clean[l]+'</p>'+
-    '<p class="modal-text">'+labels.cleanDesc[l]+'</p>'+
-    '<p class="modal-section-title">'+labels.details[l]+'</p>'+
-    '<ul class="modal-list">'+microItems+'</ul>'+
+    '<p class="modal-section-title">'+TX.sleep[l]+'</p>'+
+    '<p class="modal-text">'+TX.sleepT[l]+'</p>'+
+    '<p class="modal-section-title">'+TX.linen[l]+'</p>'+
+    '<p class="modal-text">'+TX.linenT[l]+'</p>'+
+    '<p class="modal-section-title">'+TX.clean[l]+'</p>'+
+    '<p class="modal-text">'+TX.cleanT[l]+'</p>'+
+    '<p class="modal-section-title">'+TX.det[l]+'</p>'+
+    '<ul class="modal-list">'+mi+'</ul>'+
     '<div class="modal-book-block">'+
-      '<p class="modal-book-label">'+labels.book[l]+'</p>'+
-      '<a href="#booking" class="modal-book-cta" onclick="closeRoom()">'+labels.bookBtn[l]+' — '+r.name+'</a>'+
-      '<p class="modal-book-note">'+labels.contact[l]+': <a href="mailto:info@tenethouse.it" style="color:rgba(184,155,106,0.8);text-decoration:none">info@tenethouse.it</a></p>'+
+      '<a href="#booking" class="modal-book-cta" onclick="closeRoom()">'+TX.book[l]+' — '+r.name+'</a>'+
+      '<p class="modal-book-note">'+TX.or[l]+' <a href="mailto:info@tenethouse.it" style="color:rgba(184,155,106,0.8);text-decoration:none">info@tenethouse.it</a></p>'+
     '</div>';
-  document.getElementById('roomModal').classList.add('active');
+
+  var modal = document.getElementById('roomModal');
+  modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
   document.getElementById('roomModalContent').scrollTop = 0;
 }
 
 function closeRoom() {
-  document.getElementById('roomModal').classList.remove('active');
+  document.getElementById('roomModal').style.display = 'none';
   document.body.style.overflow = '';
 }
 
-function handleModalClick(e) {
-  if (e.target === document.getElementById('roomModal')) closeRoom();
-}
+document.getElementById('roomModal').addEventListener('click', function(e) {
+  if (e.target === this) closeRoom();
+});
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeRoom();
