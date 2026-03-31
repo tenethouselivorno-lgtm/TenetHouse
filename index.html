@@ -771,6 +771,7 @@ body[data-active-lang="en"] [data-lang="en"] { display: block; }
 body[data-active-lang="it"] [data-lang="it"] { display: block; }
 body[data-active-lang="ru"] [data-lang="ru"] { display: block; }
 body[data-active-lang="de"] [data-lang="de"] { display: block; }
+body[data-active-lang="zh"] [data-lang="zh"] { display: block; }
 
 /* Inline translations - hide all, show active only */
 [data-inline-lang] { display: none; }
@@ -778,6 +779,7 @@ body[data-active-lang="en"] [data-inline-lang="en"] { display: inline; }
 body[data-active-lang="it"] [data-inline-lang="it"] { display: inline; }
 body[data-active-lang="ru"] [data-inline-lang="ru"] { display: inline; }
 body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
+body[data-active-lang="zh"] [data-inline-lang="zh"] { display: inline; }
 /* default en handled by body attribute */
 
 /* ─── ROOM MODAL ─── */
@@ -989,6 +991,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
   <span data-inline-lang="it">Prenota</span>
   <span data-inline-lang="ru">Забронировать</span>
   <span data-inline-lang="de">Buchen</span>
+          <span data-inline-lang="zh">预订</span>
 </a>
 
 <!-- LANG BAR -->
@@ -997,6 +1000,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
   <button class="lang-btn" onclick="setLang('it')">IT</button>
   <button class="lang-btn" onclick="setLang('ru')">RU</button>
   <button class="lang-btn" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
 </div>
 
 <!-- NAV -->
@@ -1008,25 +1012,30 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
       <span data-inline-lang="it">La Casa</span>
       <span data-inline-lang="ru">О нас</span>
       <span data-inline-lang="de">Das Haus</span>
+          <span data-inline-lang="zh">关于我们</span>
     </a></li>
     <li><a href="#rooms">
       <span data-inline-lang="en">Rooms</span>
       <span data-inline-lang="it">Camere</span>
       <span data-inline-lang="ru">Номера</span>
       <span data-inline-lang="de">Zimmer</span>
+          <span data-inline-lang="zh">房间</span>
     </a></li>
-    <li><a href="#spa"><span data-inline-lang="en">Wellness</span><span data-inline-lang="it">Benessere</span><span data-inline-lang="ru">Велнес</span><span data-inline-lang="de">Wellness</span></a></li>
+    <li><a href="#spa"><span data-inline-lang="en">Wellness</span><span data-inline-lang="it">Benessere</span><span data-inline-lang="ru">Велнес</span><span data-inline-lang="de">Wellness</span>
+          <span data-inline-lang="zh">养生</span></a></li>
     <li><a href="#experience">
       <span data-inline-lang="en">Experience</span>
       <span data-inline-lang="it">Esperienza</span>
       <span data-inline-lang="ru">Опыт</span>
       <span data-inline-lang="de">Erlebnis</span>
+          <span data-inline-lang="zh">体验</span>
     </a></li>
     <li><a href="#contact">
       <span data-inline-lang="en">Contact</span>
       <span data-inline-lang="it">Contatti</span>
       <span data-inline-lang="ru">Контакты</span>
       <span data-inline-lang="de">Kontakt</span>
+          <span data-inline-lang="zh">联系我们</span>
     </a></li>
   </ul>
   <a href="#booking" class="nav-book">
@@ -1034,6 +1043,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
     <span data-inline-lang="it">Prenota Ora</span>
     <span data-inline-lang="ru">Забронировать</span>
     <span data-inline-lang="de">Buchen</span>
+          <span data-inline-lang="zh">预订</span>
   </a>
 </nav>
 
@@ -1056,6 +1066,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
       <span data-inline-lang="it">Riserva la Tua Camera</span>
       <span data-inline-lang="ru">Забронировать номер</span>
       <span data-inline-lang="de">Zimmer Buchen</span>
+          <span data-inline-lang="zh">预订房间</span>
     </a>
   </div>
   <div class="hero-scroll">
@@ -1077,12 +1088,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">La Casa</span>
           <span data-inline-lang="ru">О нас</span>
           <span data-inline-lang="de">Das Haus</span>
+          <span data-inline-lang="zh">关于我们</span>
         </p>
 
         <h2 class="section-title" data-lang="en">Where ancient<br><em>mystery meets</em><br>modern comfort.</h2>
         <h2 class="section-title" data-lang="it">Dove l'antico<br><em>mistero incontra</em><br>il comfort moderno.</h2>
         <h2 class="section-title" data-lang="ru">Где древняя<br><em>тайна встречает</em><br>современный комфорт.</h2>
         <h2 class="section-title" data-lang="de">Wo uraltes<br><em>Geheimnis auf</em><br>modernen Komfort trifft.</h2>
+        <h2 class="section-title" data-lang="zh">古老<br><em>神秘邂逅</em><br>现代舒适。</h2>
 
         <div class="divider"></div>
 
@@ -1090,6 +1103,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
         <p data-lang="it">Tenet House nasce da un palindromo — l'antico Quadrato del Sator, simbolo di equilibrio, simmetria e significato nascosto. Quattro camere tematiche, ognuna con il proprio nome, la propria anima e un'estetica accuratamente progettata. Una guest house con forte personalità, non un alloggio standard.</p>
         <p data-lang="ru">Tenet House рождён из палиндрома — древнего квадрата Сатора, символа равновесия и скрытого смысла. Четыре тематических номера, каждый со своим именем, своей душой и тщательно продуманной эстетикой. Гостевой дом с сильной индивидуальностью.</p>
         <p data-lang="de">Tenet House entsteht aus einem Palindrom — dem antiken Sator-Quadrat, Symbol für Gleichgewicht und verborgene Bedeutung. Vier thematische Zimmer, jedes mit eigenem Namen, eigener Seele und sorgfältig gestaltetem Design. Ein Gästehaus mit starker Persönlichkeit.</p>
+        <p data-lang="zh">Tenet House诞生于一个回文——古老的萨托方阵，象征着平衡、对称与隐秘的意义。四间主题客房，每间都有自己的名字、灵魂和精心设计的美学风格。一个拥有鲜明个性的精品旅舍。</p>
 
 
 
@@ -1111,18 +1125,21 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
       <span data-inline-lang="it">Le Camere</span>
       <span data-inline-lang="ru">Номера</span>
       <span data-inline-lang="de">Die Zimmer</span>
+          <span data-inline-lang="zh">客房</span>
     </p>
     <h2 class="section-title" style="font-size:clamp(38px,5vw,60px);color:var(--white);margin-bottom:16px">
       <span data-inline-lang="en">Four names.<br>Four worlds.</span>
       <span data-inline-lang="it">Quattro nomi.<br>Quattro mondi.</span>
       <span data-inline-lang="ru">Четыре имени.<br>Четыре мира.</span>
       <span data-inline-lang="de">Vier Namen.<br>Vier Welten.</span>
+          <span data-inline-lang="zh">四个名字。<br>四个世界。</span>
     </h2>
     <p class="rooms-intro">
       <span data-inline-lang="en">Each room of Tenet House takes its name from the Sator Square — a symbol that has crossed millennia.</span>
       <span data-inline-lang="it">Ogni camera di Tenet House prende il nome dal Quadrato del Sator — un simbolo che ha attraversato i millenni.</span>
       <span data-inline-lang="ru">Каждый номер Tenet House носит имя из квадрата Сатора — символа, прошедшего сквозь тысячелетия.</span>
       <span data-inline-lang="de">Jedes Zimmer im Tenet House trägt einen Namen aus dem Sator-Quadrat — einem Symbol, das Jahrtausende überdauert hat.</span>
+          <span data-inline-lang="zh">Tenet House的每间客房都以萨托方阵命名——这个符号已跨越千年。</span>
     </p>
     <div class="rooms-grid reveal">
       <!-- SATOR -->
@@ -1136,6 +1153,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
             <span data-inline-lang="it">Il Creatore. Ispirata alla forza delle origini — linee decise, eleganza essenziale. Letto king-size o due letti separati, materasso di altissima qualità, lenzuola premium con profumo di pulito.</span>
             <span data-inline-lang="ru">Созидатель. Вдохновлён силой начал — чёткие линии, сдержанная элегантность. Кровать king-size или две раздельные, матрас высшего качества, премиальное бельё с ароматом чистоты.</span>
             <span data-inline-lang="de">Der Schöpfer. Inspiriert von der Kraft des Ursprungs — klare Linien, wesentliche Eleganz. Kingsize-Bett oder zwei Einzelbetten, hochwertige Matratze, Premium-Bettwäsche mit frischem Duft.</span>
+          <span data-inline-lang="zh">创造者。灵感源于起源的力量——简洁的线条，本质的优雅。特大双人床或两张单人床，高品质床垫，带清新香气的高级床品。</span>
           </p>
         </div>
       </div>
@@ -1150,6 +1168,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
             <span data-inline-lang="it">L'Artigiano. Toni caldi della terra e dettagli artigianali celebrano la bellezza del fatto a mano. Letto king-size o due letti separati, materasso di altissima qualità, lenzuola premium con profumo di pulito.</span>
             <span data-inline-lang="ru">Мастер. Тёплые земляные тона и ремесленные детали прославляют красоту ручного труда. Кровать king-size или две раздельные, матрас высшего качества, премиальное бельё с ароматом чистоты.</span>
             <span data-inline-lang="de">Der Handwerker. Warme Erdtöne und handwerkliche Details feiern die Schönheit des Handgemachten. Kingsize-Bett oder zwei Einzelbetten, hochwertige Matratze, Premium-Bettwäsche mit frischem Duft.</span>
+          <span data-inline-lang="zh">匠人。温暖的大地色调与手工细节，赞颂手作之美。特大双人床或两张单人床，高品质床垫，带清新香气的高级床品。</span>
           </p>
         </div>
       </div>
@@ -1164,6 +1183,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
             <span data-inline-lang="it">La Ruota. Movimento, ciclo, rinnovamento — un'atmosfera di quieta trasformazione ed equilibrio. Letto king-size o due letti separati, materasso di altissima qualità, lenzuola premium con profumo di pulito.</span>
             <span data-inline-lang="ru">Колесо. Движение, цикл, обновление — атмосфера тихого преображения и равновесия. Кровать king-size или две раздельные, матрас высшего качества, премиальное бельё с ароматом чистоты.</span>
             <span data-inline-lang="de">Das Rad. Bewegung, Zyklus, Erneuerung — eine Atmosphäre ruhiger Verwandlung und Gleichgewicht. Kingsize-Bett oder zwei Einzelbetten, hochwertige Matratze, Premium-Bettwäsche mit frischem Duft.</span>
+          <span data-inline-lang="zh">轮回。运动、循环、更新——宁静蜕变与平衡的氛围。特大双人床或两张单人床，高品质床垫，带清新香气的高级床品。</span>
           </p>
         </div>
       </div>
@@ -1178,6 +1198,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
             <span data-inline-lang="it">L'Opera. Stucco veneziano in caldi toni d'oro e terracotta — la camera più avvolgente, un'opera d'arte vivente. Letto king-size o due letti separati, materasso di altissima qualità, lenzuola premium con profumo di pulito.</span>
             <span data-inline-lang="ru">Произведение. Венецианская штукатурка в тёплых золотых и терракотовых тонах — самый обволакивающий номер. Кровать king-size или две раздельные, матрас высшего качества, премиальное бельё с ароматом чистоты.</span>
             <span data-inline-lang="de">Das Werk. Venezianischer Stuck in warmen Gold- und Terrakottatönen — das umhüllendste Zimmer. Kingsize-Bett oder zwei Einzelbetten, hochwertige Matratze, Premium-Bettwäsche mit frischem Duft.</span>
+          <span data-inline-lang="zh">杰作。温暖的金色与赤陶色威尼斯灰泥——最具包裹感的房间。特大双人床或两张单人床，高品质床垫，带清新香气的高级床品。</span>
           </p>
         </div>
       </div>
@@ -1195,12 +1216,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
         <span data-inline-lang="it">Benessere</span>
         <span data-inline-lang="ru">Велнес</span>
         <span data-inline-lang="de">Wellness</span>
+          <span data-inline-lang="zh">养生</span>
       </p>
       <h2 class="section-title" style="font-size:clamp(36px,5vw,60px); color:var(--white);">
         <span data-inline-lang="en">Your private<br><em style="color:var(--gold)">sanctuary.</em></span>
         <span data-inline-lang="it">Il tuo<br><em style="color:var(--gold)">santuario privato.</em></span>
         <span data-inline-lang="ru">Ваше личное<br><em style="color:var(--gold)">святилище.</em></span>
         <span data-inline-lang="de">Dein<br><em style="color:var(--gold)">privates Refugium.</em></span>
+          <span data-inline-lang="zh">您的<br><em style="color:var(--gold)">私人静修所。</em></span>
       </h2>
       <div class="divider" style="margin: 24px auto;"></div>
       <p style="color:rgba(255,255,255,0.5); font-size:14px; max-width:560px; margin:0 auto; line-height:1.9;">
@@ -1208,6 +1231,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
         <span data-inline-lang="it">L'area benessere è il cuore pulsante di Tenet House — uno spazio pensato interamente per la tua rigenerazione.</span>
         <span data-inline-lang="ru">Зона велнес — это бьющееся сердце Tenet House, пространство, созданное исключительно для вашего восстановления.</span>
         <span data-inline-lang="de">Der Wellnessbereich ist das Herz des Tenet House — ein Raum, der ganz deiner Regeneration gewidmet ist.</span>
+          <span data-inline-lang="zh">养生区是Tenet House的心脏——一个完全为您的身心恢复而设计的空间。</span>
       </p>
     </div>
     <div class="exp-grid" style="grid-template-columns: repeat(3,1fr);">
@@ -1218,12 +1242,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Sauna a Infrarossi</span>
           <span data-inline-lang="ru">Инфракрасная сауна</span>
           <span data-inline-lang="de">Infrarotsauna</span>
+          <span data-inline-lang="zh">远红外桑拿</span>
         </h3>
         <p class="exp-text" style="color:rgba(255,255,255,0.5);">
           <span data-inline-lang="en">A private infrared sauna for deep tissue warmth, detoxification, and total relaxation — available exclusively for guests.</span>
           <span data-inline-lang="it">Una sauna a infrarossi privata per un calore profondo, disintossicazione e rilassamento totale — riservata esclusivamente agli ospiti.</span>
           <span data-inline-lang="ru">Частная инфракрасная сауна для глубокого прогрева, детоксикации и полного расслабления — только для гостей.</span>
           <span data-inline-lang="de">Eine private Infrarotsauna zum Tiefenwärmen, Entgiften und vollständigen Entspannen — exklusiv für Gäste.</span>
+          <span data-inline-lang="zh">私人远红外桑拿，深层温热、排毒、彻底放松——仅供住客使用。</span>
         </p>
       </div>
       <div class="exp-item reveal" style="text-align:center;">
@@ -1233,12 +1259,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Massaggi e Trattamenti</span>
           <span data-inline-lang="ru">Массаж и Процедуры</span>
           <span data-inline-lang="de">Massagen & Behandlungen</span>
+          <span data-inline-lang="zh">按摩与护理</span>
         </h3>
         <p class="exp-text" style="color:rgba(255,255,255,0.5);">
           <span data-inline-lang="en">A dedicated space for body treatments and massage — a moment of pure care after a day of exploring Tuscany.</span>
           <span data-inline-lang="it">Uno spazio dedicato a trattamenti corporei e massaggi — un momento di cura pura dopo una giornata di esplorazione della Toscana.</span>
           <span data-inline-lang="ru">Пространство для массажа и процедур — момент настоящей заботы о себе после дня путешествий по Тоскане.</span>
           <span data-inline-lang="de">Ein Raum für Körperbehandlungen und Massagen — ein Moment reiner Fürsorge nach einem Tag in der Toskana.</span>
+          <span data-inline-lang="zh">专设身体护理与按摩空间——在托斯卡纳游览一天后，享受一刻纯粹的关爱。</span>
         </p>
       </div>
       <div class="exp-item reveal" style="text-align:center;">
@@ -1248,12 +1276,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Benessere Naturale</span>
           <span data-inline-lang="ru">Натуральное Благополучие</span>
           <span data-inline-lang="de">Natürliches Wohlbefinden</span>
+          <span data-inline-lang="zh">自然养生</span>
         </h3>
         <p class="exp-text" style="color:rgba(255,255,255,0.5);">
           <span data-inline-lang="en">After your sauna, unwind with Tuscan herbal infusions and local organic honey. Works by local Livorno artists are displayed throughout the house — and available to purchase. A space that nourishes body, mind, and soul.</span>
           <span data-inline-lang="it">Dopo la sauna, rilassati con tisane di erbe toscane e miele biologico locale. Opere di artisti locali di Livorno sono esposte in tutta la struttura — e disponibili all'acquisto. Uno spazio che nutre corpo, mente e anima.</span>
           <span data-inline-lang="ru">После сауны расслабьтесь с тосканскими травяными настоями и местным органическим мёдом. Работы местных ливорнских художников украшают пространство — и доступны для покупки. Место, которое питает тело, разум и душу.</span>
           <span data-inline-lang="de">Nach der Sauna entspanne dich mit toskanischen Kräutertees und lokalem Bio-Honig. Werke lokaler Künstler aus Livorno sind im ganzen Haus ausgestellt — und käuflich. Ein Raum, der Körper, Geist und Seele nährt.</span>
+          <span data-inline-lang="zh">桑拿后，品尝托斯卡纳草本茶和当地有机蜂蜜。里窝那本地艺术家的作品在整栋房屋中展出——并可购买。一个滋养身体、心灵与灵魂的空间。</span>
         </p>
       </div>
     </div>
@@ -1268,12 +1298,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
         <span data-inline-lang="it">L'Esperienza</span>
         <span data-inline-lang="ru">Опыт</span>
         <span data-inline-lang="de">Das Erlebnis</span>
+          <span data-inline-lang="zh">体验</span>
       </p>
       <h2 class="section-title">
         <span data-inline-lang="en">Everything you need.</span>
         <span data-inline-lang="it">Tutto ciò che serve.</span>
         <span data-inline-lang="ru">Всё что нужно.</span>
         <span data-inline-lang="de">Alles, was du brauchst.</span>
+          <span data-inline-lang="zh">一切所需，尽在此处。</span>
       </h2>
       <div class="divider"></div>
     </div>
@@ -1285,12 +1317,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Clima Intelligente</span>
           <span data-inline-lang="ru">Умный климат</span>
           <span data-inline-lang="de">Smarte Klimatisierung</span>
+          <span data-inline-lang="zh">智能气候控制</span>
         </h3>
         <p class="exp-text">
           <span data-inline-lang="en">Latest-generation climate control — whisper-quiet air conditioning with individual temperature settings in every room.</span>
           <span data-inline-lang="it">Climatizzazione di ultima generazione — silenziosa, con regolazione individuale della temperatura in ogni camera.</span>
           <span data-inline-lang="ru">Климат-контроль последнего поколения — бесшумный, с индивидуальной настройкой температуры в каждом номере.</span>
           <span data-inline-lang="de">Modernste Klimatisierung — leise, mit individueller Temperaturregelung in jedem Zimmer.</span>
+          <span data-inline-lang="zh">最新一代气候控制——静音运行，每间房独立温度调节。</span>
         </p>
       </div>
       <div class="exp-item reveal">
@@ -1300,12 +1334,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Bagni Smart</span>
           <span data-inline-lang="ru">Умные ванные</span>
           <span data-inline-lang="de">Smarte Badezimmer</span>
+          <span data-inline-lang="zh">智能浴室</span>
         </h3>
         <p class="exp-text">
           <span data-inline-lang="en">Five private en-suite bathrooms with smart fittings, premium finishes, and full sensory comfort.</span>
           <span data-inline-lang="it">Cinque bagni privati en-suite con accessori smart, finiture premium e massimo comfort sensoriale.</span>
           <span data-inline-lang="ru">Пять частных ванных комнат с умным оборудованием и премиальной отделкой.</span>
           <span data-inline-lang="de">Fünf private En-Suite-Badezimmer mit smarter Ausstattung und Premium-Oberflächen.</span>
+          <span data-inline-lang="zh">五间独立套间浴室，配备智能设施和高端饰面。</span>
         </p>
       </div>
       <div class="exp-item reveal">
@@ -1315,12 +1351,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Domotica</span>
           <span data-inline-lang="ru">Умный дом</span>
           <span data-inline-lang="de">Smart Home</span>
+          <span data-inline-lang="zh">智能家居</span>
         </h3>
         <p class="exp-text">
           <span data-inline-lang="en">Fully smart home — automated lighting, energy management, and integrated security throughout the entire house.</span>
           <span data-inline-lang="it">Casa completamente smart — illuminazione automatizzata, gestione energetica e sicurezza integrata in tutta la struttura.</span>
           <span data-inline-lang="ru">Полностью умный дом — автоматизированное освещение, управление энергией и интегрированная безопасность.</span>
           <span data-inline-lang="de">Vollständiges Smart Home — automatisierte Beleuchtung, Energiemanagement und integrierte Sicherheit.</span>
+          <span data-inline-lang="zh">全屋智能——自动化照明、能源管理和集成安防系统。</span>
         </p>
       </div>
       <div class="exp-item reveal">
@@ -1330,12 +1368,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Posizione Privilegiata</span>
           <span data-inline-lang="ru">Прекрасное расположение</span>
           <span data-inline-lang="de">Erstklassige Lage</span>
+          <span data-inline-lang="zh">优越位置</span>
         </h3>
         <p class="exp-text">
           <span data-inline-lang="en">Directly facing Livorno's historic port, in the vibrant city centre. Pisa Airport 20 min · Florence 1h · Cinque Terre 1h · Free parking nearby.</span>
           <span data-inline-lang="it">Affacciata sul porto storico di Livorno, nel vivace centro città. Aeroporto di Pisa 20 min · Firenze 1h · Cinque Terre 1h · Parcheggio gratuito nelle vicinanze.</span>
           <span data-inline-lang="ru">С видом на исторический порт Ливорно, в центре города. Аэропорт Пизы 20 мин · Флоренция 1ч · Чинкве Терре 1ч · Бесплатная парковка рядом.</span>
           <span data-inline-lang="de">Gegenüber dem historischen Hafen von Livorno, im lebhaften Zentrum. Flughafen Pisa 20 Min. · Florenz 1 Std. · Cinque Terre 1 Std. · Kostenlose Parkplätze in der Nähe.</span>
+          <span data-inline-lang="zh">面朝里窝那历史港口，位于繁华市中心。比萨机场20分钟·佛罗伦萨1小时·五渔村1小时·附近免费停车。</span>
         </p>
       </div>
       <div class="exp-item reveal">
@@ -1345,12 +1385,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Zona Comune</span>
           <span data-inline-lang="ru">Общая гостиная</span>
           <span data-inline-lang="de">Gemeinschaftsbereich</span>
+          <span data-inline-lang="zh">公共休息区</span>
         </h3>
         <p class="exp-text">
           <span data-inline-lang="en">A welcoming shared lounge with a corner sofa for reading or resting, a kitchenette, and a dining table. Stocked with Tuscan herbal teas, local organic honey and natural products — a warm space to begin the day at your own pace.</span>
           <span data-inline-lang="it">Un accogliente salotto comune con divano angolare per leggere o riposare, angolo cottura e tavolo da pranzo. Tisane di erbe toscane, miele biologico locale e prodotti naturali — uno spazio caldo per iniziare la giornata con calma.</span>
           <span data-inline-lang="ru">Уютная общая гостиная с угловым диваном для чтения и отдыха, мини-кухней и обеденным столом. Тосканские травяные чаи, местный органический мёд и натуральные продукты — тёплое место для неспешного утра.</span>
           <span data-inline-lang="de">Eine gemütliche Gemeinschaftslounge mit Ecksofa zum Lesen oder Entspannen, Küche und Esstisch. Toskanische Kräutertees, lokaler Bio-Honig und Naturprodukte — ein warmer Raum, um den Tag in Ruhe zu beginnen.</span>
+          <span data-inline-lang="zh">温馨的公共休息室，配有转角沙发供阅读或休息，厨房和餐桌。托斯卡纳草本茶、当地有机蜂蜜和天然产品——一个温暖的空间，让您从容开始新的一天。</span>
         </p>
       </div>
       <div class="exp-item reveal">
@@ -1360,12 +1402,14 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Sicurezza Verificata</span>
           <span data-inline-lang="ru">Проверенная безопасность</span>
           <span data-inline-lang="de">Geprüfte Sicherheit</span>
+          <span data-inline-lang="zh">安全保障</span>
         </h3>
         <p class="exp-text">
           <span data-inline-lang="en">Professional security system throughout. Total privacy: one personal digital code opens both the front door and your room. No reception, no check-in queue — just your code, your time, your space.</span>
           <span data-inline-lang="it">Sistema di sicurezza professionale integrato. Privacy totale: un unico codice digitale personale apre sia il portone che la tua camera. Nessuna reception, nessuna fila al check-in — solo il tuo codice, il tuo tempo, il tuo spazio.</span>
           <span data-inline-lang="ru">Профессиональная система безопасности. Полная приватность: один личный код открывает и входную дверь, и вашу комнату. Никакого ресепшна, никаких очередей — только ваш код, ваше время, ваше пространство.</span>
           <span data-inline-lang="de">Professionelles integriertes Sicherheitssystem. Totale Privatsphäre: Ein einziger digitaler Code öffnet sowohl die Haustür als auch dein Zimmer. Keine Rezeption, kein Warten — nur dein Code, deine Zeit, dein Raum.</span>
+          <span data-inline-lang="zh">专业集成安防系统。完全隐私：一个数字密码同时打开大门和您的房间。无前台、无等待——只有您的密码、您的时间、您的空间。</span>
         </p>
       </div>
     </div>
@@ -1380,18 +1424,21 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
       <span data-inline-lang="it">Prenotazioni</span>
       <span data-inline-lang="ru">Бронирование</span>
       <span data-inline-lang="de">Buchung</span>
+          <span data-inline-lang="zh">预订</span>
     </p>
     <h2 class="section-title">
       <span data-inline-lang="en">Begin your stay.</span>
       <span data-inline-lang="it">Inizia il tuo soggiorno.</span>
       <span data-inline-lang="ru">Начните ваш отдых.</span>
       <span data-inline-lang="de">Beginne deinen Aufenthalt.</span>
+          <span data-inline-lang="zh">开启您的住宿体验。</span>
     </h2>
     <p class="booking-sub">
       <span data-inline-lang="en">From €120 / night · 4 rooms available</span>
       <span data-inline-lang="it">Da €120 / notte · 4 camere disponibili</span>
       <span data-inline-lang="ru">От €120 / ночь · 4 номера</span>
       <span data-inline-lang="de">Ab €120 / Nacht · 4 Zimmer verfügbar</span>
+          <span data-inline-lang="zh">€120起 / 每晚 · 4间客房可供选择</span>
     </p>
     <div class="booking-options">
       <a href="/cdn-cgi/l/email-protection#1460717a71607c7b616771787d627b667a7b547379757d783a777b79" class="book-btn book-btn-primary">
@@ -1400,6 +1447,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
         <span data-inline-lang="it">Prenota via Email</span>
         <span data-inline-lang="ru">Забронировать по email</span>
         <span data-inline-lang="de">Per E-Mail buchen</span>
+          <span data-inline-lang="zh">通过邮件预订</span>
       </a>
       <a href="https://wa.me/393471771933" target="_blank" class="book-btn book-btn-secondary">
         ◈ WhatsApp
@@ -1416,6 +1464,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
       <span data-inline-lang="it">Miglior tariffa garantita prenotando direttamente · Cancellazione gratuita disponibile</span>
       <span data-inline-lang="ru">Лучшая цена при прямом бронировании · Бесплатная отмена</span>
       <span data-inline-lang="de">Bestpreisgarantie bei Direktbuchung · Kostenlose Stornierung verfügbar</span>
+          <span data-inline-lang="zh">直接预订享最优价格保证 · 可免费取消</span>
     </p>
   </div>
 </section>
@@ -1430,18 +1479,21 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
           <span data-inline-lang="it">Trovaci</span>
           <span data-inline-lang="ru">Как нас найти</span>
           <span data-inline-lang="de">So findest du uns</span>
+          <span data-inline-lang="zh">联系我们</span>
         </p>
         <h2 class="section-title">
           <span data-inline-lang="en">We are waiting<br>for you.</span>
           <span data-inline-lang="it">Ti aspettiamo.</span>
           <span data-inline-lang="ru">Мы ждём<br>вас.</span>
           <span data-inline-lang="de">Wir freuen uns auf dich.</span>
+          <span data-inline-lang="zh">期待您的到来。</span>
         </h2>
         <div class="divider"></div>
         <p data-lang="en">Tenet House is located in the historic center of Livorno, a vibrant port city in Tuscany. Easily reachable by train, car, or from Pisa International Airport in just 20 minutes.</p>
         <p data-lang="it">Tenet House si trova nel centro storico di Livorno, vivace città portuale della Toscana. Facilmente raggiungibile in treno, auto o dall'Aeroporto Internazionale di Pisa in soli 20 minuti.</p>
         <p data-lang="ru">Tenet House расположен в историческом центре Ливорно, живом портовом городе Тосканы. Легко добраться на поезде, автомобиле или из аэропорта Пизы за 20 минут.</p>
         <p data-lang="de">Tenet House befindet sich im historischen Zentrum von Livorno, einer lebhaften Hafenstadt in der Toskana. Leicht erreichbar mit dem Zug, Auto oder vom internationalen Flughafen Pisa in nur 20 Minuten.</p>
+        <p data-lang="zh">Tenet House位于里窝那历史中心，这是托斯卡纳一座充满活力的港口城市。乘火车、汽车或从比萨国际机场仅需20分钟即可轻松抵达。</p>
         <div class="contact-details">
           <div class="contact-item">
             <span class="contact-item-label">Indirizzo</span>
@@ -1468,6 +1520,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
             <span data-inline-lang="it">Apri in Maps</span>
             <span data-inline-lang="ru">Открыть в Maps</span>
             <span data-inline-lang="de">In Maps öffnen</span>
+          <span data-inline-lang="zh">在地图中打开</span>
           </a>
         </div>
       </div>
@@ -1496,7 +1549,7 @@ body[data-active-lang="de"] [data-inline-lang="de"] { display: inline; }
 function setLang(code) {
   document.body.setAttribute('data-active-lang', code);
   document.querySelectorAll('.lang-btn').forEach(function(b) {
-    b.classList.toggle('active', b.textContent.trim().toLowerCase() === code);
+    var t = b.textContent.trim().toLowerCase(); b.classList.toggle('active', t === code || (code === 'zh' && t === '中文'));
   });
 }
 
@@ -1521,52 +1574,53 @@ window.addEventListener('scroll', function() {
 // ROOM MODAL
 var ROOM_DATA = {
   sator: {
-    element: { en:'Earth', it:'Terra', ru:'Земля', de:'Erde' },
+    element: { en:'Earth', it:'Terra', ru:'Земля', de:'Erde', zh:'土' },
     name: 'Sator',
     photo: '',
-    tagline: { en:'Grounded, stable, essential.', it:'Radicamento, stabilità, essenza.', ru:'Укоренённость, стабильность, суть.', de:'Verwurzelung, Stabilität, Essenz.' },
-    intro: { en:'A space defined by atmosphere and intention. Sator — the one who sows, the one who creates order from the beginning. Everything here begins with presence. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Sator — colui che semina, colui che crea ordine dall\'inizio. Tutto qui inizia con la presenza. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Сатор — тот, кто сеет, кто создаёт порядок с самого начала. Всё здесь начинается с присутствия. Каждый элемент выбран для создания равновесия, покоя и ясности.', de:'Ein Raum, definiert durch Atmosphäre und Intention. Sator — der Säer, der von Anfang an Ordnung schafft. Alles hier beginnt mit Präsenz. Jedes Element ist gewählt, um Gleichgewicht, Ruhe und Klarheit zu schaffen.' }
+    tagline: { en:'Grounded, stable, essential.', it:'Radicamento, stabilità, essenza.', ru:'Укоренённость, стабильность, суть.', de:'Verwurzelung, Stabilität, Essenz.', zh:'扎根、稳定、本质。' },
+    intro: { en:'A space defined by atmosphere and intention. Sator — the one who sows, the one who creates order from the beginning. Everything here begins with presence. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Sator — colui che semina, colui che crea ordine dall\'inizio. Tutto qui inizia con la presenza. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Сатор — тот, кто сеет, кто создаёт порядок с самого начала. Всё здесь начинается с присутствия. Каждый элемент выбран для создания равновесия, покоя и ясности.', de:'Ein Raum, definiert durch Atmosphäre und Intention. Sator — der Säer, der von Anfang an Ordnung schafft. Alles hier beginnt mit Präsenz. Jedes Element ist gewählt, um Gleichgewicht, Ruhe und Klarheit zu schaffen.', zh:'一个由氛围和意图定义的空间。Sator——播种者，从一开始就创造秩序。这里的一切始于存在。每个元素都经过精选，以营造平衡、宁静与清明。' }
   },
   arepo: {
-    element: { en:'Fire', it:'Fuoco', ru:'Огонь', de:'Feuer' },
+    element: { en:'Fire', it:'Fuoco', ru:'Огонь', de:'Feuer', zh:'火' },
     name: 'Arepo',
     photo: '',
-    tagline: { en:'Depth, mystery, and hidden intensity.', it:'Profondità, mistero, intensità nascosta.', ru:'Глубина, тайна, скрытая интенсивность.', de:'Tiefe, Geheimnis, verborgene Intensität.' },
-    intro: { en:'A space defined by atmosphere and intention. Arepo — the craftsman, the one who guides with steady hands. Here, every detail is in its place. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Arepo — l\'artigiano, colui che guida con mani ferme. Qui ogni dettaglio è al suo posto. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Арепо — мастер, тот, кто ведёт твёрдой рукой. Здесь каждая деталь на своём месте. Каждый элемент выбран для создания равновесия, покоя и ясности.', de:'Ein Raum, definiert durch Atmosphäre und Intention. Arepo — der Handwerker, der mit sicherer Hand führt. Hier ist jedes Detail an seinem Platz. Jedes Element ist gewählt, um Gleichgewicht, Ruhe und Klarheit zu schaffen.' }
+    tagline: { en:'Depth, mystery, and hidden intensity.', it:'Profondità, mistero, intensità nascosta.', ru:'Глубина, тайна, скрытая интенсивность.', de:'Tiefe, Geheimnis, verborgene Intensität.', zh:'深邃、神秘、隐藏的力量。' },
+    intro: { en:'A space defined by atmosphere and intention. Arepo — the craftsman, the one who guides with steady hands. Here, every detail is in its place. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Arepo — l\'artigiano, colui che guida con mani ferme. Qui ogni dettaglio è al suo posto. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Арепо — мастер, тот, кто ведёт твёрдой рукой. Здесь каждая деталь на своём месте. Каждый элемент выбран для создания равновесия, покоя и ясности.', de:'Ein Raum, definiert durch Atmosphäre und Intention. Arepo — der Handwerker, der mit sicherer Hand führt. Hier ist jedes Detail an seinem Platz. Jedes Element ist gewählt, um Gleichgewicht, Ruhe und Klarheit zu schaffen.', zh:'一个由氛围和意图定义的空间。Arepo——匠人，以稳健的双手引导。这里每个细节各得其所。每个元素都经过精选，以营造平衡、宁静与清明。' }
   },
   opera: {
-    element: { en:'Air', it:'Aria', ru:'Воздух', de:'Luft' },
+    element: { en:'Air', it:'Aria', ru:'Воздух', de:'Luft', zh:'气' },
     name: 'Opera',
     photo: '',
-    tagline: { en:'Light, creation, and expression.', it:'Luce, creazione, espressione.', ru:'Свет, творчество, выражение.', de:'Licht, Schöpfung und Ausdruck.' },
-    intro: { en:'A space defined by atmosphere and intention. Opera — the work, the act, the expression. A room that holds creativity and quiet in equal measure. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Opera — il lavoro, l\'atto, l\'espressione. Una camera che tiene creatività e quiete in uguale misura. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Опера — работа, акт, выражение. Номер, в котором творчество и покой в равной мере. Каждый элемент выбран для создания равновесия, покоя и ясности.', de:'Ein Raum, definiert durch Atmosphäre und Intention. Opera — das Werk, die Tat, der Ausdruck. Ein Zimmer, das Kreativität und Stille gleichermaßen vereint. Jedes Element ist gewählt, um Gleichgewicht, Ruhe und Klarheit zu schaffen.' }
+    tagline: { en:'Light, creation, and expression.', it:'Luce, creazione, espressione.', ru:'Свет, творчество, выражение.', de:'Licht, Schöpfung und Ausdruck.', zh:'光、创造与表达。' },
+    intro: { en:'A space defined by atmosphere and intention. Opera — the work, the act, the expression. A room that holds creativity and quiet in equal measure. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Opera — il lavoro, l\'atto, l\'espressione. Una camera che tiene creatività e quiete in uguale misura. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Опера — работа, акт, выражение. Номер, в котором творчество и покой в равной мере. Каждый элемент выбран для создания равновесия, покоя и ясности.', de:'Ein Raum, definiert durch Atmosphäre und Intention. Opera — das Werk, die Tat, der Ausdruck. Ein Zimmer, das Kreativität und Stille gleichermaßen vereint. Jedes Element ist gewählt, um Gleichgewicht, Ruhe und Klarheit zu schaffen.', zh:'一个由氛围和意图定义的空间。Opera——作品、行动、表达。一个将创造力与宁静融为一体的房间。每个元素都经过精选，以营造平衡、宁静与清明。' }
   },
   rotas: {
-    element: { en:'Water', it:'Acqua', ru:'Вода', de:'Wasser' },
+    element: { en:'Water', it:'Acqua', ru:'Вода', de:'Wasser', zh:'水' },
     name: 'Rotas',
     photo: '',
-    tagline: { en:'Movement, flow, and quiet transition.', it:'Movimento, flusso, transizione silenziosa.', ru:'Движение, поток, тихий переход.', de:'Bewegung, Fluss und stille Verwandlung.' },
-    intro: { en:'A space defined by atmosphere and intention. Rotas — the wheel, the cycle, the return. A reminder that rest is not absence — it is renewal. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Rotas — la ruota, il ciclo, il ritorno. Un promemoria che il riposo non è assenza — è rinnovamento. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Ротас — колесо, цикл, возвращение. Напоминание о том, что отдых — не отсутствие, а обновление. Каждый элемент выбран для создания равновесия, покоя и ясности.', de:'Ein Raum, definiert durch Atmosphäre und Intention. Rotas — das Rad, der Zyklus, die Rückkehr. Eine Erinnerung daran, dass Ruhe keine Abwesenheit ist — sondern Erneuerung. Jedes Element ist gewählt, um Gleichgewicht, Ruhe und Klarheit zu schaffen.' }
+    tagline: { en:'Movement, flow, and quiet transition.', it:'Movimento, flusso, transizione silenziosa.', ru:'Движение, поток, тихий переход.', de:'Bewegung, Fluss und stille Verwandlung.', zh:'运动、流转与静谧蜕变。' },
+    intro: { en:'A space defined by atmosphere and intention. Rotas — the wheel, the cycle, the return. A reminder that rest is not absence — it is renewal. Every element is chosen to create balance, quiet, and clarity.', it:'Uno spazio definito da atmosfera e intenzione. Rotas — la ruota, il ciclo, il ritorno. Un promemoria che il riposo non è assenza — è rinnovamento. Ogni elemento è scelto per creare equilibrio, quiete e chiarezza.', ru:'Пространство, определённое атмосферой и намерением. Ротас — колесо, цикл, возвращение. Напоминание о том, что отдых — не отсутствие, а обновление. Каждый элемент выбран для создания равновесия, покоя и ясности.', de:'Ein Raum, definiert durch Atmosphäre und Intention. Rotas — das Rad, der Zyklus, die Rückkehr. Eine Erinnerung daran, dass Ruhe keine Abwesenheit ist — sondern Erneuerung. Jedes Element ist gewählt, um Gleichgewicht, Ruhe und Klarheit zu schaffen.', zh:'一个由氛围和意图定义的空间。Rotas——轮回、循环、回归。提醒我们休息不是缺席——而是新生。每个元素都经过精选，以营造平衡、宁静与清明。' }
   }
 };
 
 var TX = {
-  sleep: { en:'Sleeping Arrangement', it:'Configurazione Letto', ru:'Спальные места', de:'Schlafbereich' },
-  linen: { en:'Bed Linen', it:'Biancheria', ru:'Постельное бельё', de:'Bettwäsche' },
-  clean: { en:'Cleanliness', it:'Pulizia', ru:'Чистота', de:'Sauberkeit' },
-  det:   { en:'Micro Details', it:'Dettagli', ru:'Детали', de:'Details' },
-  from:  { en:'From', it:'Da', ru:'От', de:'Ab' },
-  night: { en:'/ night', it:'/ notte', ru:'/ ночь', de:'/ Nacht' },
-  book:  { en:'Book Now', it:'Prenota Ora', ru:'Забронировать', de:'Jetzt Buchen' },
-  or:    { en:'Or write us:', it:'O scrivici:', ru:'Или напишите:', de:'Oder schreib uns:' },
-  sleepT:{ en:'Two separate beds or one true king-size bed — no gap, just one continuous surface. High-quality mattresses support true, restorative rest.', it:'Due letti separati o un vero king-size — nessuno spazio, solo una superficie continua. Materassi di alta qualità per un riposo vero.', ru:'Две раздельные кровати или одна king-size — без зазора, единая поверхность. Матрасы высокого качества.', de:'Zwei Einzelbetten oder ein echtes Kingsize-Bett — keine Lücke, eine durchgehende Fläche. Hochwertige Matratzen.' },
-  linenT:{ en:'Premium bed linen, carefully selected. Always fresh, always clean — with a natural, pure scent.', it:'Biancheria da letto premium. Sempre fresca, sempre pulita — con un profumo naturale e puro.', ru:'Премиальное постельное бельё. Всегда свежее, всегда чистое — с натуральным ароматом.', de:'Premium-Bettwäsche. Immer frisch, immer sauber — mit natürlichem, reinem Duft.' },
-  cleanT:{ en:'Special attention is dedicated to cleanliness. Each room is prepared with precision, care, and deep respect for every guest. Cleanliness is not just maintained — it is respected.', it:'Attenzione speciale alla pulizia. Ogni camera è preparata con precisione e rispetto. La pulizia non è solo mantenuta — è rispettata.', ru:'Особое внимание чистоте. Каждый номер подготовлен с точностью и уважением. Чистота не просто поддерживается — она уважается.', de:'Besondere Aufmerksamkeit für Sauberkeit. Jedes Zimmer wird mit Präzision und Respekt vorbereitet. Sauberkeit wird nicht nur gepflegt — sie wird respektiert.' },
+  sleep: { en:'Sleeping Arrangement', it:'Configurazione Letto', ru:'Спальные места', de:'Schlafbereich', zh:'睡眠配置' },
+  linen: { en:'Bed Linen', it:'Biancheria', ru:'Постельное бельё', de:'Bettwäsche', zh:'床品' },
+  clean: { en:'Cleanliness', it:'Pulizia', ru:'Чистота', de:'Sauberkeit', zh:'洁净度' },
+  det:   { en:'Micro Details', it:'Dettagli', ru:'Детали', de:'Details', zh:'细节' },
+  from:  { en:'From', it:'Da', ru:'От', de:'Ab', zh:'起价' },
+  night: { en:'/ night', it:'/ notte', ru:'/ ночь', de:'/ Nacht', zh:'/ 每晚' },
+  book:  { en:'Book Now', it:'Prenota Ora', ru:'Забронировать', de:'Jetzt Buchen', zh:'立即预订' },
+  or:    { en:'Or write us:', it:'O scrivici:', ru:'Или напишите:', de:'Oder schreib uns:', zh:'或联系我们：' },
+  sleepT:{ en:'Two separate beds or one true king-size bed — no gap, just one continuous surface. High-quality mattresses support true, restorative rest.', it:'Due letti separati o un vero king-size — nessuno spazio, solo una superficie continua. Materassi di alta qualità per un riposo vero.', ru:'Две раздельные кровати или одна king-size — без зазора, единая поверхность. Матрасы высокого качества.', de:'Zwei Einzelbetten oder ein echtes Kingsize-Bett — keine Lücke, eine durchgehende Fläche. Hochwertige Matratzen.', zh:'两张单人床或一张真正的特大双人床——无缝隙，一整片连续的睡眠面。高品质床垫。' },
+  linenT:{ en:'Premium bed linen, carefully selected. Always fresh, always clean — with a natural, pure scent.', it:'Biancheria da letto premium. Sempre fresca, sempre pulita — con un profumo naturale e puro.', ru:'Премиальное постельное бельё. Всегда свежее, всегда чистое — с натуральным ароматом.', de:'Premium-Bettwäsche. Immer frisch, immer sauber — mit natürlichem, reinem Duft.', zh:'高级床品，精心挑选。始终清新、始终洁净——自然纯净的香气。' },
+  cleanT:{ en:'Special attention is dedicated to cleanliness. Each room is prepared with precision, care, and deep respect for every guest. Cleanliness is not just maintained — it is respected.', it:'Attenzione speciale alla pulizia. Ogni camera è preparata con precisione e rispetto. La pulizia non è solo mantenuta — è rispettata.', ru:'Особое внимание чистоте. Каждый номер подготовлен с точностью и уважением. Чистота не просто поддерживается — она уважается.', de:'Besondere Aufmerksamkeit für Sauberkeit. Jedes Zimmer wird mit Präzision und Respekt vorbereitet. Sauberkeit wird nicht nur gepflegt — sie wird respektiert.', zh:'对清洁给予特别关注。每间客房都以精准和尊重来准备。洁净不仅仅是维护——更是一种尊重。' },
   micro: {
     en: ['Carefully prepared before every arrival','Fresh, clean, and naturally scented linens','Designed for real rest and comfort','Cleanliness with attention to every detail'],
     it: ['Preparata con cura prima di ogni arrivo','Biancheria fresca, pulita e profumata naturalmente','Pensata per il vero riposo e comfort','Pulizia con attenzione ad ogni dettaglio'],
     ru: ['Тщательно подготовлено перед каждым заездом','Свежее, чистое и натурально ароматное бельё','Создано для настоящего отдыха','Чистота с вниманием к каждой детали'],
-    de: ['Sorgfältig vorbereitet vor jeder Ankunft','Frische, saubere und natürlich duftende Bettwäsche','Gestaltet für echte Erholung','Sauberkeit mit Liebe zum Detail']
+    de: ['Sorgfältig vorbereitet vor jeder Ankunft','Frische, saubere und natürlich duftende Bettwäsche','Gestaltet für echte Erholung','Sauberkeit mit Liebe zum Detail'],
+    zh: ['每次入住前精心准备','清新、洁净、自然芬芳的床品','专为真正的休憩而设计','注重每一个细节的洁净']
   }
 };
 
