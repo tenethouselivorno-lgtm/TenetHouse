@@ -751,11 +751,106 @@ footer {
   to { opacity:1; transform: translateY(0); }
 }
 
+/* ─── HAMBURGER MENU ─── */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1002;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--white);
+  margin: 6px 0;
+  transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ─── MOBILE MENU OVERLAY ─── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  background: rgba(14,14,12,0.97);
+  backdrop-filter: blur(20px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.mobile-menu.open {
+  display: flex;
+  opacity: 1;
+}
+.mobile-menu a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 0;
+  opacity: 0.7;
+  transition: opacity 0.3s, color 0.3s;
+}
+.mobile-menu a:hover { opacity: 1; color: var(--gold); }
+.mobile-menu .mobile-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 24px 0;
+  opacity: 0.4;
+}
+.mobile-menu .mobile-lang-bar {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+.mobile-menu .mobile-lang-bar button {
+  background: none;
+  border: 1px solid rgba(184,155,106,0.3);
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--white);
+  cursor: pointer;
+  padding: 8px 14px;
+  opacity: 0.5;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+.mobile-menu .mobile-lang-bar button.active,
+.mobile-menu .mobile-lang-bar button:hover {
+  opacity: 1;
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 /* ─── MOBILE ─── */
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
   nav.scrolled { padding: 12px 24px; }
   .nav-links { display: none; }
+  .nav-book { display: none; }
+  .lang-bar { display: none; }
+  .hamburger { display: block; }
   .section-inner { padding: 0 24px; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
   .rooms-grid { grid-template-columns: 1fr 1fr; }
@@ -1045,7 +1140,66 @@ body[data-active-lang="zh"] [data-inline-lang="zh"] { display: inline; }
     <span data-inline-lang="de">Buchen</span>
           <span data-inline-lang="zh">预订</span>
   </a>
+  <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">
+    <span data-inline-lang="en">The House</span>
+    <span data-inline-lang="it">La Casa</span>
+    <span data-inline-lang="ru">О нас</span>
+    <span data-inline-lang="de">Das Haus</span>
+    <span data-inline-lang="zh">关于我们</span>
+  </a>
+  <a href="#rooms" onclick="closeMobileMenu()">
+    <span data-inline-lang="en">Rooms</span>
+    <span data-inline-lang="it">Camere</span>
+    <span data-inline-lang="ru">Номера</span>
+    <span data-inline-lang="de">Zimmer</span>
+    <span data-inline-lang="zh">房间</span>
+  </a>
+  <a href="#spa" onclick="closeMobileMenu()">
+    <span data-inline-lang="en">Wellness</span>
+    <span data-inline-lang="it">Benessere</span>
+    <span data-inline-lang="ru">Велнес</span>
+    <span data-inline-lang="de">Wellness</span>
+    <span data-inline-lang="zh">养生</span>
+  </a>
+  <a href="#experience" onclick="closeMobileMenu()">
+    <span data-inline-lang="en">Experience</span>
+    <span data-inline-lang="it">Esperienza</span>
+    <span data-inline-lang="ru">Опыт</span>
+    <span data-inline-lang="de">Erlebnis</span>
+    <span data-inline-lang="zh">体验</span>
+  </a>
+  <a href="#contact" onclick="closeMobileMenu()">
+    <span data-inline-lang="en">Contact</span>
+    <span data-inline-lang="it">Contatti</span>
+    <span data-inline-lang="ru">Контакты</span>
+    <span data-inline-lang="de">Kontakt</span>
+    <span data-inline-lang="zh">联系我们</span>
+  </a>
+  <a href="#booking" onclick="closeMobileMenu()" style="color:var(--gold); opacity:1;">
+    <span data-inline-lang="en">Book Now</span>
+    <span data-inline-lang="it">Prenota Ora</span>
+    <span data-inline-lang="ru">Забронировать</span>
+    <span data-inline-lang="de">Jetzt Buchen</span>
+    <span data-inline-lang="zh">立即预订</span>
+  </a>
+  <div class="mobile-divider"></div>
+  <div class="mobile-lang-bar">
+    <button class="active" onclick="setLang('en'); syncLangBtns('en')">EN</button>
+    <button onclick="setLang('it'); syncLangBtns('it')">IT</button>
+    <button onclick="setLang('ru'); syncLangBtns('ru')">RU</button>
+    <button onclick="setLang('de'); syncLangBtns('de')">DE</button>
+    <button onclick="setLang('zh'); syncLangBtns('zh')">中文</button>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1550,6 +1704,38 @@ function setLang(code) {
   document.body.setAttribute('data-active-lang', code);
   document.querySelectorAll('.lang-btn').forEach(function(b) {
     var t = b.textContent.trim().toLowerCase(); b.classList.toggle('active', t === code || (code === 'zh' && t === '中文'));
+  });
+  syncLangBtns(code);
+}
+
+// MOBILE MENU
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.getElementById('hamburgerBtn');
+  var isOpen = menu.classList.contains('open');
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    menu.classList.add('open');
+    btn.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+function closeMobileMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.getElementById('hamburgerBtn');
+  menu.classList.remove('open');
+  btn.classList.remove('active');
+  document.body.style.overflow = '';
+}
+function syncLangBtns(code) {
+  document.querySelectorAll('.mobile-lang-bar button').forEach(function(b) {
+    var t = b.textContent.trim().toLowerCase();
+    b.classList.toggle('active', t === code || (code === 'zh' && t === '中文'));
+  });
+  document.querySelectorAll('.lang-bar .lang-btn').forEach(function(b) {
+    var t = b.textContent.trim().toLowerCase();
+    b.classList.toggle('active', t === code || (code === 'zh' && t === '中文'));
   });
 }
 
